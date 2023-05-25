@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Criar Conta {% endblock %}
+
+{% block content %}
+<h1>Criar Conta</h1>
+<form method="post">
+    {{ form.csrf_token }}
+
+    {{ form.first_name.label()}}
+    {{ form.first_name()}}
+
+    {{ form.last_name.label()}}
+    {{ form.last_name()}}
+
+    {{ form.email.label()}}
+    {{ form.email()}}
+
+    {{ form.password.label()}}
+    {{ form.password()}}
+
+    {{ form.password_confirmation.label()}}
+    {{ form.password_confirmation()}}
+
+    {{ form.botao_criar()}}
+
+</form>
+{% endblock %}

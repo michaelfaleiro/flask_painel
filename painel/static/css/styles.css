@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: #d1d2dc;
+  font-family: "Roboto", "Helvetica Neue", "Courier New";
+}
+
+.btn {
+  background-color: #6b46c1;
+  color: #d1d2dc;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  background-color: #8253f1;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #181b23;
+  overflow-y: auto;
+  width: 12rem;
+  transition: all ease-in-out 0.5s;
+  padding: 0 15px;
+  z-index: 10;
+}
+
+#main {
+  margin-left: 12rem;
+  background-color: #1f2029;
+  height: 100vh;
+}
+
+.nav-link {
+  background-color: #6b46c1;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d1d2dc;
+  transition: all ease-in-out 0.4s;
+}
+
+.nav-link:hover {
+  color: #eeeef2;
+  font-size: 1.1rem;
+  background-color: #8253f1;
+}
+
+i.menu-mobile {
+  position: fixed;
+  color: white;
+  background-color: #252c90;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  border-radius: 4rem;
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+i,
+menu {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.menu-nav-active {
+  overflow: hidden;
+}
+
+.menu-nav-active #header {
+  left: 0;
+}
+
+@media (max-width: 1024px) {
+  #header {
+    left: -12rem;
+  }
+
+  i.menu-mobile {
+    display: flex;
+  }
+
+  #main {
+    margin-left: 0;
+  }
+}
