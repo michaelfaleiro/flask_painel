@@ -1,0 +1,25 @@
+:root {
+  --bg: #161b22;
+  --bgText: #0d1117;
+  --bgButton: #f1449d;
+  --bgButtonHover: #ed64a6;
+  --text: #d1d2dc;
+}
+
+.vendas {
+  background-color: #2d3748;
+  border-radius: 0.4rem;
+  min-height: 90vh;
+}
+
+.form-select {
+  width: 200px;
+}
+
+.card {
+  background-color: var(--bg);
+}
+
+.card-body {
+  color: var(--text);
+}

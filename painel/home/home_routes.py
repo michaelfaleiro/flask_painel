@@ -7,3 +7,9 @@ from painel import app
 @login_required
 def home():
     return render_template('home/home.html', usuario=current_user)
+
+
+@app.route('/vendas')
+@login_required
+def homevendas():
+    return render_template('vendas/homevendas.html')

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/css/vendas.css">
+{% endblock %}
+
+{% block title %} Vendas {% endblock %}
+
+
+{% block content %}
+<div class="container pt-2">
+    <div class="row">
+        <div class="col">
+            <h3>Vendas</h3>
+        </div>
+    </div>
+    <div class="row mt-3 ">
+
+        <div class="col-12 p-3  vendas">
+            <h4 class="text-center">Lista de Vendas</h4>
+            <section class="border filtros p-2 mb-3">
+                <h5>Filtros</h5>
+                <div class="d-flex flex-wrap">
+                    <span>Status</span>
+                    <select class="form-select me-2" aria-label="Default select example">
+                        <option selected>Status</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <span>Status</span>
+
+                    <select class="form-select me-2" aria-label="Default select example">
+                        <option selected></option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <span>Status</span>
+
+                    <select class="form-select me-2" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <span>Status</span>
+
+                    <select class="form-select me-2" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+
+                </div>
+                <a href="" class="btn mt-2">Novo</a>
+            </section>
+            <section>
+                <div class="card mb-3" style="width: 18rem; height: 13rem;">
+                    <div class="card-body">
+                        <div class="border-bottom">
+                            <h5 class="card-title">Michael Linea</h5>
+
+                        </div>
+                        <p class="card-text">Suspensão</p>
+                        <div>
+                            <p class="card-text">Status</p>
+                            <span>Orçamento</span>
+                        </div>
+                        <div class="border-top p-2">
+                            <a href="#" class="btn ">Editar</a>
+                            <a href="#" class="btn ">Peças</a>
+                            <a href="#" class="btn ">Garantia</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}
