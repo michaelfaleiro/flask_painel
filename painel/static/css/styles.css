@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
 
+:root {
+  --bg: #161b22;
+  --bgText: #0d1117;
+  --bgButton: #f1449d;
+  --bgButtonHover: #ed64a6;
+}
+
 html,
 body {
   width: 100%;
@@ -9,13 +16,13 @@ body {
 }
 
 .btn {
-  background-color: #6b46c1;
+  background-color: var(--bgButton);
   color: #d1d2dc;
   transition: all 0.4s;
 }
 
 .btn:hover {
-  background-color: #8253f1;
+  background-color: var(--bgButtonHover);
 }
 
 #header {
@@ -23,22 +30,23 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #181b23;
+  background-color: var(--bg);
   overflow-y: auto;
   width: 12rem;
   transition: all ease-in-out 0.5s;
   padding: 0 15px;
   z-index: 10;
+  border-right: solid 1px #353646;
 }
 
 #main {
   margin-left: 12rem;
-  background-color: #1f2029;
+  background-color: var(--bg);
   height: 100vh;
 }
 
 .nav-link {
-  background-color: #6b46c1;
+  background-color: var(--bgButton);
   margin-bottom: 1rem;
   border-radius: 0.4rem;
   display: flex;
@@ -51,7 +59,7 @@ body {
 .nav-link:hover {
   color: #eeeef2;
   font-size: 1.1rem;
-  background-color: #8253f1;
+  background-color: #ed64a6;
 }
 
 i.menu-mobile {
