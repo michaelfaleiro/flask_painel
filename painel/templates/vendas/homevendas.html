@@ -97,11 +97,15 @@
                 </div>
                 <a href="{{url_for('novavenda')}}" class="btn mt-2">Novo</a>
             </section>
-            <section>
+
+            <!-- Card Vendas -->
+            <section class="d-flex flex-wrap gap-3">
+
+                {% for item in card %}
                 <div class="card mb-3" style="width: 18rem; height: 13rem;">
                     <div class="card-body">
                         <div class="border-bottom">
-                            <h5 class="card-title">Michael Linea</h5>
+                            <h5 class="card-title">{{ item.nome }} {{ item.carro }}</h5>
 
                         </div>
                         <p class="card-text">Suspensão</p>
@@ -116,6 +120,13 @@
                         </div>
                     </div>
                 </div>
+                {% else %}
+                <div>
+                    <h5>Sem dados</h5>
+                </div>
+                {% endfor %}
+
+
             </section>
 
         </div>
