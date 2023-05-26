@@ -20,3 +20,4 @@ login_manager.login_view = 'login'
 
 from painel.auth import auth_routes
 from painel.home import home_routes
+from painel.vendas import vendas_routes
