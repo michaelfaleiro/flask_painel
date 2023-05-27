@@ -15,45 +15,6 @@
         </div>
     </div>
 
-    {% if form != undefined %}
-    <!-- Modal Novo venda -->
-    <section class="modal">
-        <div id="card">
-            <a href="/vendas" id="fechar"><i class="bi bi-x-square-fill"></i></a>
-            <h2>Novo</h2>
-            <form action="" method="post">
-                {{ form.csrf_token }}
-
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Nome</label>
-                    {{ form.nome(class='form-control', id='floatingInput', placeholder='Nome do Cliente')}}
-                </div>
-
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Carro</label>
-                    {{ form.carro(class='form-control', id='floatingInput', placeholder='Ex, Gol, Golf')}}
-                </div>
-
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Placa</label>
-                    {{ form.placa(class='form-control', id='floatingInput', placeholder='Ex, JXS2525')}}
-                </div>
-
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Chassi</label>
-                    {{ form.chassi(class='form-control', id='floatingInput', placeholder='Chassi')}}
-                </div>
-
-
-                <div class="text-center">
-                    {{ form.botao_salvar(class='btn')}}
-                    <a href="/vendas" class="btn">Cancelar</a>
-                </div>
-            </form>
-        </div>
-    </section>
-    {% endif %}
-
 
     <div class="row mt-3 ">
 
@@ -114,7 +75,7 @@
                             <span>Orçamento</span>
                         </div>
                         <div class="border-top p-2">
-                            <a href="#" class="btn ">Editar</a>
+                            <a href="/venda/{{ item.id }}" class="btn ">Editar</a>
                             <a href="#" class="btn ">Peças</a>
                             <a href="#" class="btn ">Garantia</a>
                         </div>
@@ -126,8 +87,52 @@
                 </div>
                 {% endfor %}
 
-
             </section>
+            <!-- Fim Card Vendas -->
+
+            {% if form != undefined %}
+            <!-- Modal Venda -->
+            <section class="modal">
+                <div id="card">
+                    <a href="/vendas" id="fechar"><i class="bi bi-x-square-fill"></i></a>
+                    <h2>Novo</h2>
+                    <form action="" method="post">
+                        {{ form.csrf_token }}
+
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Nome</label>
+                            {{ form.nome(class='form-control', id='floatingInput', placeholder='Nome do Cliente')}}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Carro</label>
+                            {{ form.carro(class='form-control', id='floatingInput', placeholder='Ex, Gol, Golf')}}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Placa</label>
+                            {{ form.placa(class='form-control', id='floatingInput', placeholder='Ex, JXS2525')}}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Chassi</label>
+                            {{ form.chassi(class='form-control', id='floatingInput', placeholder='Chassi')}}
+                        </div>
+
+
+                        <div class="text-center">
+                            {{ form.botao_salvar(class='btn')}}
+                            <a href="/vendas" class="btn">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            {% endif %}
+
+            <!-- Fim Modal Vendas -->
+
+
+
 
         </div>
 

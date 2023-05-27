@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/css/vendas.css">
+{% endblock %}
+
+{% block title %} Vendas {% endblock %}
+
+
+{% block content %}
+<div class="container pt-2">
+    <div class="row">
+        <div class="col">
+            <h3>Vendas</h3>
+        </div>
+    </div>
+
+
+    <section class="row mt-3 vendas d-flex flex-wrap">
+
+        <div class="col-12 col-sm-12 col-md-3 col-lg-2 border p-3">
+            <div>
+                <h5 class="mb-3">Dados do Cliente</h5>
+            </div>
+            <hr>
+            <div>
+                <p>Nome: <span>{{ venda.nome }}</span></p>
+                <p>Veículo: <span>{{ venda.carro }}</span></p>
+                <p>Placa: <span>{{ venda.placa }}</span></p>
+                <p>Chassi: <span>{{ venda.chassi }}</span></p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-9 col-lg-7 border p-3">
+            <div>
+                <h5 class="mb-3">Orçamento</h5>
+            </div>
+            <hr>
+            <div class="d-flex flex-wrap gap-3">
+                <div class="col-12 col-sm-2   mb-3">
+                    <label for="quantidade" class="form-label">Quant</label>
+                    <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder=""
+                        value="1">
+                </div>
+
+                <div class="col-12 col-sm-7   mb-3">
+                    <label for="produto" class="form-label">Produto</label>
+                    <input type="text" class="form-control" id="produto" name="produto" placeholder="Produto">
+                </div>
+
+                <div class="col-12 col-sm-2  mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input type="number" class="form-control" id="preco" name="preco" placeholder="" value="0">
+
+                </div>
+
+                <div>
+                    <a href="" class="btn">Adicionar</a>
+                </div>
+
+            </div>
+            <hr>
+            <section>
+                <h5>Produtos</h5>
+            </section>
+
+        </div>
+
+        <div class="col-md-12 col-lg-3 border p-3">
+            <div>
+                <h5 class="mb-3">Negociação</h5>
+                <hr>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+
+</div>
+
+{% endblock %}

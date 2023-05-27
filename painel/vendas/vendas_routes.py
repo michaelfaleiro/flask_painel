@@ -29,3 +29,10 @@ def novavenda():
             return redirect('vendas')
     vendas = Vendas.query.all()
     return render_template('vendas/homevendas.html', form=form, card=vendas)
+
+
+@app.route('/venda/<item_id>', methods=['GET', 'POST'])
+@login_required
+def venda(item_id):
+    venda = Vendas.query.get(item_id)
+    return render_template('vendas/editvenda.html', venda=venda)
