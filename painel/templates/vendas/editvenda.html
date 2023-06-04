@@ -31,37 +31,89 @@
             </div>
         </div>
 
+
         <div class="col-12 col-md-9 col-lg-7 border p-3">
-            <div>
-                <h5 class="mb-3">Orçamento</h5>
-            </div>
-            <hr>
-            <div class="d-flex flex-wrap gap-3">
-                <div class="col-12 col-sm-2   mb-3">
-                    <label for="quantidade" class="form-label">Quant</label>
-                    <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder=""
-                        value="1">
-                </div>
-
-                <div class="col-12 col-sm-7   mb-3">
-                    <label for="produto" class="form-label">Produto</label>
-                    <input type="text" class="form-control" id="produto" name="produto" placeholder="Produto">
-                </div>
-
-                <div class="col-12 col-sm-2  mb-3">
-                    <label for="preco" class="form-label">Preço</label>
-                    <input type="number" class="form-control" id="preco" name="preco" placeholder="" value="0">
-
-                </div>
-
+            <form action="/venda/{{ venda.id }}/produto" method="POST">
+                {{ form.csrf_token }}
                 <div>
-                    <a href="" class="btn">Adicionar</a>
+                    <h5 class="mb-3">Orçamento</h5>
                 </div>
+                <hr>
+                <div class="d-flex flex-wrap gap-3">
+                    <div class="col-12 col-sm-1   mb-3">
 
-            </div>
+                        {{ form.quantidade.label(class='form-label') }}
+                        {{ form.quantidade(class='form-control', value='1') }}
+
+                    </div>
+
+                    <div class="col-12 col-sm-2   mb-3">
+
+                        {{ form.sku.label(class='form-label') }}
+                        {{ form.sku(class='form-control') }}
+
+                    </div>
+
+                    <div class="col-12 col-sm-6   mb-3">
+                        {{ form.produto.label(class='form-label') }}
+                        {{ form.produto(class='form-control') }}
+
+                    </div>
+
+                    <div class="col-12 col-sm-2  mb-3">
+                        {{ form.preco.label(class='form-label') }}
+                        {{ form.preco(class='form-control') }}
+
+
+                    </div>
+
+                    <div>
+                        {{ form.botao_adicionar(class='btn btnLoading')}}
+
+                    </div>
+
+                </div>
+            </form>
             <hr>
             <section>
                 <h5>Produtos</h5>
+                <div class="table-responsive">
+
+                    <table class="table table-bordered ">
+                        <thead>
+                            <tr class="text-center">
+                                <th class="col-1">Quant</th>
+                                <th class="col-2">Sku</th>
+                                <th class="col-6">Produto</th>
+                                <th class="col-2">Preço Unit</th>
+                                <th class="col-1">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for produto in venda.produtos %}
+                            <tr class="thover">
+                                <td class="text-center">{{ produto.quantidade }}</td>
+                                <td class="">{{ produto.sku }}</td>
+                                <td>{{ produto.produto }}</td>
+                                <td class="text-end">R$ {{ produto.preco }}</td>
+                                <td class="text-end"><a href="" class="text-warning-emphasis">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <a class="text-danger" href="/venda/{{ venda.id }}/{{ produto.id }}/delete">
+                                        <i class="bi bi-cart-x-fill"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
             </section>
 
         </div>
@@ -76,7 +128,6 @@
 
 
     </section>
-
 
 
 

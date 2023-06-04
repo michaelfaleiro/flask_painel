@@ -46,6 +46,10 @@ body {
   height: 100vh;
 }
 
+#loading {
+  display: block;
+}
+
 .nav-link {
   background-color: var(--bgButton);
   margin-bottom: 1rem;

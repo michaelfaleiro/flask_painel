@@ -1,3 +1,5 @@
+//Menu Mobile
+
 const menuMobile = document.querySelector(".menu-mobile");
 const body = document.querySelector("body");
 const menu = document.querySelector(".menu");
@@ -20,4 +22,13 @@ menu.addEventListener("click", () => {
         "bi-arrow-right-circle-fill",
         "bi-arrow-left-circle-fill"
       );
+});
+
+// Botão loading
+
+const btn_Loading = document.querySelector(".btnLoading");
+const loading = document.querySelector("#loading");
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  loading.style.display = "none";
 });

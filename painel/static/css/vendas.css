@@ -60,3 +60,12 @@ section.modal div#card a#fechar {
 section.modal div#card a#fechar:hover {
   color: #ed64a6;
 }
+
+table {
+  background-color: var(--bg);
+}
+
+table thead,
+tbody tr td {
+  color: var(--text);
+}
